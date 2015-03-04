@@ -1,0 +1,54 @@
+<script type='text/ng-template', id='templates/questions.html'>
+  <md-content class='md-padding'>
+    <div>
+      <md-grid-list
+          md-cols-sm='2' md-cols-md='4' md-cols-gt-md='6' 
+          md-row-height-gt-md='1:1' md-row-height='4:3'
+          md-gutter='8px' md-gutter-gt-sm='4px' >
+        <md-grid-tile ng-repeat='question in questions' class='white md-whiteframe-z1' md-rowspan='1' md-colspan='2' ng-cloak>
+          <md-grid-tile-header>
+            <h3><a ng-click='delete(question)'><i class='fa fa-remove'></i></a></h3>
+          </md-grid-tile-header>
+          <p class='question animated bounceIn'>
+            <a ui-sref='edit({id: question.id})'>
+              {{question.question}}
+            </a>
+          </p>
+          <md-grid-tile-footer>
+            <h3>
+              {{question.name}}
+            </h3>
+        </md-grid-tile>
+      </md-grid-list>
+    </div>
+  </md-content>
+  <md-button ui-sref='add' class='md-primary md-fab md-fab-bottom-right'>
+    ADD
+  </md-button>
+</script>
+
+<script type='text/ng-template', id='templates/addedit.html'>
+  <md-content class='md-padding'>
+    <h1>Ask a question</h1>
+      <form ng-submit='save(question)'>
+        <div layout layout-sm='column'>
+          <md-input-container flex>
+            <label>Your Name</label>
+            <input ng-model='question.name'>
+          </md-input-container>
+        </div>
+        
+        <md-input-container flex>
+          <label>Question</label>
+          <textarea ng-model='question.question' columns='1' rows='4' md-maxlength='150'></textarea>
+        </md-input-container>
+        <md-button class='md-raised md-primary large-font'>
+          Save Question
+        </md-button>
+        <md-button ui-sref='questions' class='md-raised large-font'>
+          Cancel
+        </md-button>
+      </form>
+    </md-content>
+</script>
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app='realtime'>
+<head>
+  <meta charset='utf-8'>
+  <title>Meetup Realtime Questions & Feedback</title>
+  <include template='./vendorstyles.marko' />
+  <link rel='stylesheet', href='/app.css' />
+</head>
+<body>
+  <md-toolbar md-scroll-shrink class='md-normal'>
+    <div class='md-toolbar-tools'>
+      <span class='md-flex'>Meetup Realtime Questions & Feedback</span>
+    </div>
+  </md-toolbar>
+  
+  <div ui-view></div>
+  
+  <include template='./vendorscripts.marko' />
+  <include template='./ngtemplates.marko' />
+  <script src='/bindtable.js'></script>
+  <script src='/app.js'></script>
+</body>
+</html>
