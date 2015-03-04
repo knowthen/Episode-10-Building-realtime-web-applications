@@ -4,7 +4,7 @@ Creating realtime web applications has been **possible** for a while now, **howe
 
 I think this is largely **because** the **tools haven’t provided** exactly what we **needed** to do realtime in a **simple** and **painless** **way**.
 
-Luckily this has** all changed**, now it's pretty **easy** to build realtime applications and it's my goal to **prove** that **to you** in this episode.
+Luckily this has **all changed**, now it's pretty **easy** to build realtime applications and it's my goal to **prove** that **to you** in this episode.
 
 The best way to prove this is by **showing you**, so we'll **build** a simple single page **application** the uses **realtime** features from **top** to **bottom**.
 
@@ -23,7 +23,7 @@ Here is the technology stack we'll use:
 #### Let's briefly look at each piece of the stack we'll use in this tutorial:
 
 **RethinkDB** which is a relatively new, **open source,** **NoSQL** **database** that stores JSON documents. It’s **fast**, **scalable**, **easy** to **administer** and a **Joy** to program with.
-Recently the folks at RethinkDB added some **killer** **features** for doing **realtime**. A feature called [changefeeds](http://rethinkdb.com/docs/changefeeds/javascript/ "ChangeFeeds"), that in my opinion **fills** a big **gap** and makes **implementing** **realtime** features** a breeze**.
+Recently the folks at RethinkDB added some **killer** **features** for doing **realtime**. A feature called [changefeeds](http://rethinkdb.com/docs/changefeeds/javascript/ "ChangeFeeds"), that in my opinion **fills** a big **gap** and makes **implementing** **realtime** features **a breeze**.
 
 We'll use **node.js** as our server platform which is a **great choice** for **realtime** applications.
 
