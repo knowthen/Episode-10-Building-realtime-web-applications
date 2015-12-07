@@ -13,10 +13,10 @@ function setup (io) {
     });
 
     socket.on('question:add', function(record, cb){
-      
+
       record = _.pick(record, 'name', 'question');
       record.createdAt = new Date();
-      
+
       r.table('question')
         .insert(record)
         .run(function(err, result){
@@ -39,7 +39,7 @@ function setup (io) {
         .get(record.id)
         .update(record)
         .run(cb);
-      
+
     });
 
     socket.on('question:delete', function(id, cb){
@@ -54,21 +54,21 @@ function setup (io) {
     socket.on('question:changes:start', function(data){
 
       let limit, filter;
-      limit = data.limit || 100; 
+      limit = data.limit || 100;
       filter = data.filter || {};
       r.table('question')
         .orderBy({index: r.desc('createdAt')})
         .filter(filter)
         .limit(limit)
-        .changes()
+        .changes({includeInitial: true})
         .run({cursor: true}, handleChange);
 
       function handleChange(err, cursor){
 
         if(err){
-          
-          console.log(err); 
-        
+
+          console.log(err);
+
         }
         else{
 
@@ -99,8 +99,8 @@ function setup (io) {
       }
 
     });
-    
-    
+
+
   });
 
 }
